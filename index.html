@@ -112,33 +112,22 @@
   map.addControl(nav, 'top-left');
 
   map.on('mousemove', function(event) {
-    //console.log(event);
     if (map.loaded()) {
       var features = map.queryRenderedFeatures(event.point, {
         layers: ['lots']
       });
       map.getCanvas().style.cursor = features.length ? 'pointer' : '';
     }
-    /*
-    if (features.length) {
-      map.getCanvas().style.cursor = 'pointer';
-    } else {
-      map.getCanvas().style.cursor = '';
-    }*/
   });
 
   map.on('click', function(event) {
-    //console.log('Mouse clicked');
-    //console.log(event.point);
     var geometry = event.point;
     var parameters = {
       layers: ['lots']
     };
     var features = map.queryRenderedFeatures(geometry, parameters);
-    //console.log(features);
-    //console.log(features.length + ' features');
     var lot = features[0];
-    console.log(lot);
+    //console.log(lot);
 
     if (features.length) {
       var bbl = lot.properties.BBL || '—';
