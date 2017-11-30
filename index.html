@@ -136,8 +136,6 @@
       var bldgClass = lot.properties.BldgClass || '—';
       var ownerName = lot.properties.OwnerName || '—';
 
-      console.log(bbl, landUse, zoneDist, bldgClass, ownerName);
-
       var popup = new mapboxgl.Popup()
         .setLngLat(event.lngLat)
         .setHTML('<dl>' +
